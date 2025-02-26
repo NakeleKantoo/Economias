@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title>Economias - Login</title>
+    <link rel="icon" type="image/x-icon" href="/economias/favicon.ico">
+  </head>
+  <script src="script.js"></script>
+  <body>
+    <div class="header">
+      <h1>Economias - Login</h1>
+      <div class="right">
+      </div>
+    </div>
+    <div class="login" id="login">
+      <h3>Login</h3>
+      <input type="email" id="email" placeholder="E-mail...">
+      <input type="password" id="senha" placeholder="Senha...">
+      <button id="loginBtn" onclick="login()">Login</button>
+      <a onclick="changeToRegister()" style="text-align: right;">Não tem uma conta?</a>
+    </div>
+    
+    <div class="login" id="register" style="display: none;">
+      <h3>Registrar</h3>
+      <input type="text" id="Rnome" placeholder="Nome...">
+      <input type="email" id="Remail" placeholder="E-mail...">
+      <input type="password" id="Rsenha" placeholder="Senha...">
+      <button id="regBtn" onclick="registrar()">Registrar</button>
+      <a onclick="changeToLogin()" style="text-align: right;">Possui uma conta?</a>
+    </div>
+
+  </body>
+</html>

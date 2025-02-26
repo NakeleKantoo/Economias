@@ -1,0 +1,188 @@
+:root {
+    --primary:#343434;
+    --secondary: #2a2a2a;
+    --clicked:#101010;
+    --background:#121212;
+    --backsecond:#575757;
+    --text:#fff;
+    --big:2.5em;
+    --normal:2em;
+}
+
+.adicionargasto {
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    display:flex;
+    background-color: var(--primary);
+    margin: 0px;
+    overflow-x: auto;
+    z-index: 1;
+}
+.right {
+    display:flex;
+    margin-left: auto;
+    background-color: var(--primary);
+    font-size: large;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: auto;
+    font-size: medium;
+}
+
+th,
+td {
+    border: 1px solid var(--primary);
+    text-align: left;
+    padding: 8px;
+    background-color: var(--backsecond);
+    color: var(--text);
+    white-space: nowrap;
+}
+
+th {
+    background-color: var(--primary) !important;
+    color: var(--text);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    font-size: large;
+}
+label {
+    font-size: large;
+    margin: 5px;
+}
+input {
+    background-color: var(--backsecond);
+    color: var(--text);
+    border: none;
+    margin: 5px;
+    width: 100%;
+}
+input:focus {
+    border: none;
+    outline: none;
+}
+select {
+    background-color: var(--backsecond);
+    color: var(--text);
+    border: none;
+    margin: 5px;
+    width: 100%;
+}
+button {
+    background-color: var(--primary);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+}
+button:active {
+    background-color: var(--clicked);
+}
+h1 {
+    margin-left: 5px;
+    font-size: larger;
+}
+.tablegastos {
+    width: 100%;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    z-index: 2;
+}
+
+@media (max-width: 800px) {
+    .tablegastos {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }    
+}
+
+
+
+img {
+    filter: invert(100%);
+    padding: 0px;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item {
+    background-color: var(--primary);
+    color: var(--text);
+    border-radius: 5px;
+    height: 1fr;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    transition: ease-in-out 0.2s;
+}
+
+.item:hover {
+    transform: scale(102%);
+    box-shadow: 0px 0px 400px -14px rgba(255,255,255,0.5);
+    -webkit-box-shadow: 0px 0px 400px -14px rgba(255,255,255,0.5);
+    -moz-box-shadow: 0px 0px 400px -14px rgba(255,255,255,0.5);
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: var(--background);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--backsecond);
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: var(--primary);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transform: translateY(-15px)
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
+  }

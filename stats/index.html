@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title>Economias</title>
+    <link rel="icon" type="image/x-icon" href="/economias/favicon.ico">
+  </head>
+  <script src="script.js"></script>
+  <body>
+    <div class="header">
+      <h1>Economias</h1>
+      <div class="right">
+        <button id="removeBtn" onclick="gotoRemove()">Remover</button>
+        <button id="editBtn" onclick="gotoEdit()">Editar</button>
+        <button id="adicionarBtn" onclick="gotoAdd()">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="adicionargasto">
+      <h3 id="mesgasto">Reais gastos no mês: </h3>
+      <h3>Gasto no ano: </h3>
+      <h3>Maior gasto: </h3>
+      
+    </div>
+
+    <div class="tablegastos">
+      <table id="gastosTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Categoria</th>
+            <th>Meio de pagamento</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data do pagamento</th>
+          </tr>
+        </thead>
+        <tbody id="gastosList"></tbody>
+      </table>
+    </div>
+  </body>
+</html>

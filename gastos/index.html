@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title>Economias</title>
+    <link rel="icon" type="image/x-icon" href="/economias/favicon.ico">
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <body>
+    <div class="header">
+      <h1>Economias</h1>
+      <div class="right">
+        <button><img src="img/cart.png" style="width: var(--big);"></button>
+        <button><img src="img/alert.png" style="width: var(--big);"></button>
+        <button><img src="img/electro.png" style="width: var(--big); color:white;"></button>
+        <button><img src="img/chart.png" style="width: var(--big);"></button>
+      </div>
+    </div>
+    <div class="tablegastos" id="gastosTable">
+      <div class="item">
+        <button><img src="img/add.png" style="width: 50%;" onclick="openDialog()"></button>
+      </div>
+
+    </div>
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('myModal').style.display='none';">&times;</span>
+        <div class="adicionargasto">
+          <div class="flex no-wrap">
+            <label for="titulo">Título:</label>
+            <input name="titulo" type="text" id="titulo">
+          </div>
+          <div class="flex no-wrap">
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" value="-1" id="categoria">
+              <option value="-1">Selecione uma categoria</option>
+            </select>
+          </div>
+          <div class="flex no-wrap">
+            <label for="meiopagamento">Meio de pagamento:</label>
+            <select name="meiopagamento" value="-1" id="meiopagamento">
+              <option value="-1">Selecione um método de pagamento</option>
+            </select>
+          </div>
+          <div class="flex no-wrap">
+            <label for="descricao">Descrição:</label>
+            <input name="descricao" type="text" id="descricao">
+          </div>
+          <div class="flex no-wrap">
+            <label for="valor">Valor do pagamento:</label>
+            <input name="valor" type="number" id="valor" step="0.01" placeholder="0,00">
+          </div>
+          <div class="flex no-wrap">
+            <label for="datapagamento">Data do pagamento:</label>
+            <input name="datapagamento" type="date" id="datapagamento">
+          </div>
+
+          <button id="btnAdd" onclick="adicionarGasto()">Adicionar gasto</button>
+    
+        </div>
+      </div>
+    
+    </div>
+  </body>
+</html>
