@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="tablegastos" id="gastosTable">
-      <div class="item">
+      <div class="item" id="Add">
         <button><img src="img/add.png" style="width: 50%;" onclick="openDialog()"></button>
       </div>
 
@@ -29,7 +29,7 @@
 
       <!-- Modal content -->
       <div class="modal-content">
-        <span class="close" onclick="document.getElementById('myModal').style.display='none';">&times;</span>
+        <span class="close" onclick="closeModal()">&times;</span>
         <div class="adicionargasto">
           <div class="flex no-wrap">
             <label for="titulo">Título:</label>
@@ -59,9 +59,10 @@
             <label for="datapagamento">Data do pagamento:</label>
             <input name="datapagamento" type="date" id="datapagamento">
           </div>
-
-          <button id="btnAdd" onclick="adicionarGasto()">Adicionar gasto</button>
-    
+          <div class="flex hundred center">
+            <button id="btnAdd" class="hundred matchheight" onclick="adicionarGasto()">Adicionar gasto</button>
+            <button id="btnRmv" class="redbg smallbtn rmvBtn"><img src="img/bin.png" class="smallimg"></button>
+          </div>
         </div>
       </div>
     

@@ -7,6 +7,8 @@
     --text:#fff;
     --big:2.5em;
     --normal:2em;
+    --delete:#f55;
+    --deletefocus:#c33;
 }
 
 .adicionargasto {
@@ -160,8 +162,13 @@ img {
     margin: auto;
     padding: 20px;
     border: 1px solid var(--backsecond);
-    width: 80%;
+    width: 40%;
   }
+  @media (max-width: 800px) {
+    .modal-content {
+        width: 80%;
+    }    
+}
   
   /* The Close Button */
   .close {
@@ -186,3 +193,42 @@ img {
   .no-wrap {
     white-space: nowrap;
   }
+
+.redbg {
+    background-color: var(--delete);
+    transition: ease-in-out 400ms;
+}
+
+.redbg:hover {
+    background-color: var(--deletefocus);
+    transform: scale(95%);
+}
+
+.smallbtn {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.smallimg {
+    max-width: 35px;
+    max-height: 35px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.rmvBtn {
+    display: none;
+}
+
+.hundred {
+    width: 100%;
+}
+
+.matchheight {
+    height: 40px;
+}
+
+.center {
+    justify-content: center;
+    vertical-align: middle;
+}
