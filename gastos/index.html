@@ -19,6 +19,9 @@
         <button><img src="img/chart.png" style="width: var(--big);"></button>
       </div>
     </div>
+    <div class="flex">
+      <button class="right" onclick="document.getElementById('filter').style.display='block';"><img src="img/filter.png" style="width: var(--big);"></button>
+    </div>
     <div class="tablegastos" id="gastosTable">
       <div class="item" id="Add">
         <button><img src="img/add.png" style="width: 50%;" onclick="openDialog()"></button>
@@ -61,6 +64,50 @@
           </div>
           <div class="flex hundred center">
             <button id="btnAdd" class="hundred matchheight" onclick="adicionarGasto()">Adicionar gasto</button>
+            <button id="btnRmv" class="redbg smallbtn rmvBtn"><img src="img/bin.png" class="smallimg"></button>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+    <div id="filter" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="closeFilter()">&times;</span>
+        <div class="adicionargasto">
+          <div class="flex no-wrap">
+            <label for="titulo">Título:</label>
+            <input name="ftitulo" type="text" id="titulo">
+          </div>
+          <div class="flex no-wrap">
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" value="-1" id="fcategoria">
+              <option value="-1">Selecione uma categoria</option>
+            </select>
+          </div>
+          <div class="flex no-wrap">
+            <label for="meiopagamento">Meio de pagamento:</label>
+            <select name="meiopagamento" value="-1" id="fmeiopagamento">
+              <option value="-1">Selecione um método de pagamento</option>
+            </select>
+          </div>
+          <div class="flex no-wrap">
+            <label for="descricao">Descrição:</label>
+            <input name="descricao" type="text" id="fdescricao">
+          </div>
+          <div class="flex no-wrap">
+            <label for="valor">Valor do pagamento:</label>
+            <input name="valor" type="number" id="fvalor" step="0.01" placeholder="0,00">
+          </div>
+          <div class="flex no-wrap" style="flex-direction: column !important;">
+            <label for="datapagamento">Data do pagamento (de-até):</label>
+            <input name="datapagamento" type="date" id="fadatapagamento">
+            <input name="datapagamento" type="date" id="fbdatapagamento">
+          </div>
+          <div class="flex hundred center">
+            <button id="btnAdd" class="hundred matchheight" onclick="setarFiltro()">Filtrar</button>
             <button id="btnRmv" class="redbg smallbtn rmvBtn"><img src="img/bin.png" class="smallimg"></button>
           </div>
         </div>

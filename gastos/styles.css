@@ -26,7 +26,6 @@
     display:flex;
     margin-left: auto;
     background-color: var(--primary);
-    font-size: large;
 }
 
 table {
