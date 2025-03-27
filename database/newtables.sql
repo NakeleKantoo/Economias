@@ -5,6 +5,13 @@ CREATE TABLE usuarios (
     email varchar(255)
 );
 
+CREATE TABLE maxusers (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    value int
+);
+
+INSERT INTO maxusers VALUES (1,1); /* MAXIMO USUARIOS */
+
 CREATE TABLE auth (
     code varchar(255) not null unique,
     dataInicio date

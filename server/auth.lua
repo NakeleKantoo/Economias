@@ -11,16 +11,22 @@ function checkAuth(body)
             local res = {text="Success", error=false, code=randomString(255)}
             local query = "insert into auth (code) values ('"..res.code.."');"
             local resTxt = json.encode(res)
-            return resTxt
+            return resTxt, nil
         else
-            return json.encode({text="ERRO: Senha ou Usuario invalido", error=true, code=""})
+            return nil, json.encode({text="ERRO: Senha ou Usuario invalido", error=true, code=""})
         end
     else
-        return json.encode({text="ERRO: Senha ou Usuario invalido", error=true, code=""})
+        return nil, json.encode({text="ERRO: Senha ou Usuario invalido", error=true, code=""})
     end
 end
 
 function addUser(body)
+    local totalUsers = getTotalUsers()
+    local maxusers = getAllowedUsers()
+    if tonumber(totalUsers) >= tonumber(maxusers) then
+        return nil, json.encode({text="Máximo de usuarios alcançado", error=true})
+    end
+
     local t = json.decode(body)
     local name = t.name
     local email = t.email
@@ -32,8 +38,30 @@ function addUser(body)
     if cur then
         local code = randomString(255)
         local query = "insert into auth (code) values ('"..code.."');"
-        return json.encode({text="Success", error=false, code=code})
+        return json.encode({text="Success", error=false, code=code}), nil
     else
-        return json.encode({text="Erro", error=true})
+        return nil, json.encode({text="Erro", error=true})
     end
+end
+
+function getTotalUsers()
+    local stmt = "select count(id) from usuarios;"
+    local cur, err = conn:execute(stmt)
+    if not cur then
+        return nil, err
+    end
+    local cache = {}
+    cur:fetch(cache, "n")
+    return cache[1], nil
+end
+
+function getAllowedUsers()
+    local stmt = "select * from maxusers where id='1';"
+    local cur, err = conn:execute(stmt)
+    if not cur then
+        return nil, err
+    end
+    local cache = {}
+    cur:fetch(cache, "a")
+    return cache.value, nil
 end
